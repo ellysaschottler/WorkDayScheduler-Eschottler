@@ -16,3 +16,8 @@ WHEN I click the save button for that time block
 THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
+
+
+Let's start with making it possible to enter text on each day and saving it with a save button
+
+Then we will add time functionallity to determine past, present future and have classes change accordingly.
