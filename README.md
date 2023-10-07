@@ -1,4 +1,4 @@
-# module5-WorkDayScheduler-Eschottler
+# WorkDayScheduler-Eschottler
 Schedule your work day with this calendar.
 
 
