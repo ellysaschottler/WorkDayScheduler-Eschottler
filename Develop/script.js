@@ -1,7 +1,7 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-$(function () {
+//$(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -19,6 +19,56 @@ $(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
-});
-var currentDay = dayjs();
-$("#currentDay").text(currentDay.format("[Today is ]MM/DD/YYYY"))
+//});
+
+
+
+
+//var currentDay = dayjs();
+//$("#currentDay").text(currentDay.format("[Today is ]MM/DD/YYYY"))
+
+
+
+var toDoFormEl = document.querySelector("#toDo-form");
+var toDoListEl = document.querySelector("#toDo-list");
+var toDos = [];
+var save9AmButton = document.querySelector("[data-hour='nineAm']");
+var toDoInput = document.querySelector("#toDo")
+
+//Renders any saved plans for the hour if they are stored
+function renderToDos(){
+  toDoListEl.innerHTML = '';
+  for (var i = 0; i < toDos.length; i++){
+      var toDo = toDos[i];
+      var li = document.createElement("li");
+      li.textContent = toDo;
+      li.setAttribute("data-index", i);
+      toDoListEl.appendChild(li);
+  }
+}
+
+// Get stored high score table if available
+function init() {
+  var storedToDos = JSON.parse(localStorage.getItem("toDos"));
+  if (storedToDos != null) {
+      toDos = storedToDos;
+  }
+  renderToDos();
+}
+
+// Store to dos
+function storeToDos() {
+  localStorage.setItem("toDos", JSON.stringify(toDos));
+}
+
+save9AmButton.addEventListener("click", function(e){
+  e.preventDefault();
+  var toDoText = toDoInput.value;
+  if (toDoText ===""){
+      return;
+  }
+  toDos.push(toDoText);
+  toDoInput.value = "";
+  storeToDos();
+  renderToDos();
+})
