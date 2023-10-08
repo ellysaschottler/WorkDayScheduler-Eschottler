@@ -34,6 +34,55 @@ var toDos9Am = [];
 var save9AmButton = document.querySelector("[data-hour='nineAm']");
 var toDoInput9Am = document.querySelector("#toDo9Am")
 
+// Get stored todos if available
+function init() {
+  var storedToDos9Am = JSON.parse(localStorage.getItem("toDos9Am"));
+  if (storedToDos9Am != null) {
+      toDos9Am = storedToDos9Am;
+  }
+  renderToDos9Am();
+  var storedToDos10Am = JSON.parse(localStorage.getItem("toDos10Am"));
+  if (storedToDos10Am != null) {
+      toDos10Am = storedToDos10Am;
+  }
+  renderToDos10Am();
+  var storedToDos11Am = JSON.parse(localStorage.getItem("toDos11Am"));
+  if (storedToDos11Am != null) {
+      toDos11Am = storedToDos11Am;
+  }
+  renderToDos11Am();
+  var storedToDos12Pm = JSON.parse(localStorage.getItem("toDos12Pm"));
+  if (storedToDos12Pm != null) {
+      toDos12Pm = storedToDos12Pm;
+  }
+  renderToDos12Pm();
+  var storedToDos1Pm = JSON.parse(localStorage.getItem("toDos1Pm"));
+  if (storedToDos1Pm != null) {
+      toDos1Pm = storedToDos1Pm;
+  }
+  renderToDos1Pm();
+  var storedToDos2Pm = JSON.parse(localStorage.getItem("toDos2Pm"));
+  if (storedToDos2Pm != null) {
+      toDos2Pm = storedToDos2Pm;
+  }
+  renderToDos2Pm();
+  var storedToDos3Pm = JSON.parse(localStorage.getItem("toDos3Pm"));
+  if (storedToDos3Pm != null) {
+      toDos3Pm = storedToDos3Pm;
+  }
+  renderToDos3Pm();
+  var storedToDos4Pm = JSON.parse(localStorage.getItem("toDos4Pm"));
+  if (storedToDos4Pm != null) {
+      toDos4Pm = storedToDos4Pm;
+  }
+  renderToDos4Pm();
+  var storedToDos5Pm = JSON.parse(localStorage.getItem("toDos5Pm"));
+  if (storedToDos5Pm != null) {
+      toDos5Pm = storedToDos5Pm;
+  }
+  renderToDos5Pm();
+}
+
 //Renders any saved plans for the hour if they are stored
 function renderToDos9Am(){
   toDoList9AmEl.innerHTML = '';
@@ -45,14 +94,7 @@ function renderToDos9Am(){
       toDoList9AmEl.appendChild(li);
   }
 }
-// Get stored high score table if available
-function init() {
-  var storedToDos9Am = JSON.parse(localStorage.getItem("toDos9Am"));
-  if (storedToDos9Am != null) {
-      toDos9Am = storedToDos9Am;
-  }
-  renderToDos9Am();
-}
+
 
 // Store to dos
 function storeToDos9Am() {
@@ -88,14 +130,6 @@ function renderToDos10Am(){
       li.setAttribute("data-index", i);
       toDoList10AmEl.appendChild(li);
   }
-}
-// Get stored high score table if available
-function init() {
-  var storedToDos10Am = JSON.parse(localStorage.getItem("toDos10Am"));
-  if (storedToDos10Am != null) {
-      toDos10Am = storedToDos10Am;
-  }
-  renderToDos10Am();
 }
 
 // Store to dos
@@ -134,14 +168,6 @@ function renderToDos11Am(){
       toDoList11AmEl.appendChild(li);
   }
 }
-// Get stored high score table if available
-function init() {
-  var storedToDos11Am = JSON.parse(localStorage.getItem("toDos11Am"));
-  if (storedToDos11Am != null) {
-      toDos11Am = storedToDos11Am;
-  }
-  renderToDos11Am();
-}
 
 // Store to dos
 function storeToDos11Am() {
@@ -178,14 +204,6 @@ function renderToDos12Pm(){
       toDoList12PmEl.appendChild(li);
   }
 }
-// Get stored high score table if available
-function init() {
-  var storedToDos12Pm = JSON.parse(localStorage.getItem("toDos12Pm"));
-  if (storedToDos12Pm != null) {
-      toDos12Pm = storedToDos12Pm;
-  }
-  renderToDos12Pm();
-}
 
 // Store to dos
 function storeToDos12Pm() {
@@ -205,7 +223,6 @@ save12PmButton.addEventListener("click", function(e){
 })
 
 
-
 //1pm variables and functions
 var toDoForm1PmEl = document.querySelector("#toDo-form1Pm");
 var toDoList1PmEl = document.querySelector("#toDo-list1Pm");
@@ -223,14 +240,6 @@ function renderToDos1Pm(){
       li.setAttribute("data-index", i);
       toDoList1PmEl.appendChild(li);
   }
-}
-// Get stored high score table if available
-function init() {
-  var storedToDos1Pm = JSON.parse(localStorage.getItem("toDos1Pm"));
-  if (storedToDos1Pm != null) {
-      toDos1Pm = storedToDos1Pm;
-  }
-  renderToDos1Pm();
 }
 
 // Store to dos
@@ -269,14 +278,6 @@ function renderToDos2Pm(){
       toDoList2PmEl.appendChild(li);
   }
 }
-// Get stored high score table if available
-function init() {
-  var storedToDos2Pm = JSON.parse(localStorage.getItem("toDos2Pm"));
-  if (storedToDos2Pm != null) {
-      toDos2Pm = storedToDos2Pm;
-  }
-  renderToDos2Pm();
-}
 
 // Store to dos
 function storeToDos2Pm() {
@@ -312,14 +313,6 @@ function renderToDos3Pm(){
       li.setAttribute("data-index", i);
       toDoList3PmEl.appendChild(li);
   }
-}
-// Get stored high score table if available
-function init() {
-  var storedToDos3Pm = JSON.parse(localStorage.getItem("toDos3Pm"));
-  if (storedToDos3Pm != null) {
-      toDos3Pm = storedToDos3Pm;
-  }
-  renderToDos3Pm();
 }
 
 // Store to dos
@@ -358,14 +351,6 @@ function renderToDos4Pm(){
       toDoList4PmEl.appendChild(li);
   }
 }
-// Get stored high score table if available
-function init() {
-  var storedToDos4Pm = JSON.parse(localStorage.getItem("toDos4Pm"));
-  if (storedToDos4Pm != null) {
-      toDos4Pm = storedToDos4Pm;
-  }
-  renderToDos4Pm();
-}
 
 // Store to dos
 function storeToDos4Pm() {
@@ -403,14 +388,6 @@ function renderToDos5Pm(){
       toDoList5PmEl.appendChild(li);
   }
 }
-// Get stored high score table if available
-function init() {
-  var storedToDos5Pm = JSON.parse(localStorage.getItem("toDos5Pm"));
-  if (storedToDos5Pm != null) {
-      toDos5Pm = storedToDos5Pm;
-  }
-  renderToDos5Pm();
-}
 
 // Store to dos
 function storeToDos5Pm() {
@@ -428,3 +405,5 @@ save5PmButton.addEventListener("click", function(e){
   storeToDos5Pm();
   renderToDos5Pm();
 })
+
+init()
