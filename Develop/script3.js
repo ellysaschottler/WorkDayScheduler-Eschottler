@@ -21,7 +21,7 @@
   //
 //});
 
-var nineEl = document.getElementById("hour-9")
+var nineEl = document.querySelector("[data-hour='9']")
 var tenEl = document.querySelector("[data-hour='10']")
 var elevenEl = document.querySelector("[data-hour='11']")
 var twelveEl = document.querySelector("[data-hour='12']")
@@ -38,12 +38,25 @@ $("#currentDay").text(currentDay.format("[Today is ]MM/DD/YYYY"))
 
 //Get CurrentHour with dayjs
 var currentHour = dayjs().format("H")
-console.log(currentHour)
+
 
 function classifyPastPresentFuture (){
-  if (currentHour < 9)
-  {
-    nineEl.classList.add("future")
+    if (currentHour < 9)
+    {
+      nineEl.classList.add("future")
+      tenEl.classList.add("future")
+      elevenEl.classList.add("future")
+      twelveEl.classList.add("future")
+      thirteenEl.classList.add("future")
+      fourteenEl.classList.add("future")
+      fifteenEl.classList.add("future")
+      sixteenEl.classList.add("future")
+      seventeenEl.classList.add("future")
+      return
+    } 
+      else if (9 == currentHour)
+    {
+    nineEl.classList.add("present")
     tenEl.classList.add("future")
     elevenEl.classList.add("future")
     twelveEl.classList.add("future")
@@ -53,138 +66,125 @@ function classifyPastPresentFuture (){
     sixteenEl.classList.add("future")
     seventeenEl.classList.add("future")
     return
-  } 
-    else if (9 == currentHour)
-  {
-  nineEl.classList.add("present")
-  tenEl.classList.add("future")
-  elevenEl.classList.add("future")
-  twelveEl.classList.add("future")
-  thirteenEl.classList.add("future")
-  fourteenEl.classList.add("future")
-  fifteenEl.classList.add("future")
-  sixteenEl.classList.add("future")
-  seventeenEl.classList.add("future")
-  return
+    }
+     else if (currentHour == 10)
+    {
+      nineEl.classList.add("past")
+      tenEl.classList.add("present")
+      elevenEl.classList.add("future")
+      twelveEl.classList.add("future")
+      thirteenEl.classList.add("future")
+      fourteenEl.classList.add("future")
+      fifteenEl.classList.add("future")
+      sixteenEl.classList.add("future")
+      seventeenEl.classList.add("future")
+      return
+    }
+    else if (currentHour == 11)
+    {
+      nineEl.classList.add("past")
+      tenEl.classList.add("past")
+      elevenEl.classList.add("present")
+      twelveEl.classList.add("future")
+      thirteenEl.classList.add("future")
+      fourteenEl.classList.add("future")
+      fifteenEl.classList.add("future")
+      sixteenEl.classList.add("future")
+      seventeenEl.classList.add("future")
+      return
+    }
+    else if (currentHour == 12)
+    {
+      nineEl.classList.add("past")
+      tenEl.classList.add("past")
+      elevenEl.classList.add("past")
+      twelveEl.classList.add("present")
+      thirteenEl.classList.add("future")
+      fourteenEl.classList.add("future")
+      fifteenEl.classList.add("future")
+      sixteenEl.classList.add("future")
+      seventeenEl.classList.add("future")
+      return
+    }
+    else if (currentHour == 13)
+    {
+      nineEl.classList.add("past")
+      tenEl.classList.add("past")
+      elevenEl.classList.add("past")
+      twelveEl.classList.add("past")
+      thirteenEl.classList.add("present")
+      fourteenEl.classList.add("future")
+      fifteenEl.classList.add("future")
+      sixteenEl.classList.add("future")
+      seventeenEl.classList.add("future")
+      return
+    }
+    else if (currentHour == 14)
+    {
+      nineEl.classList.add("past")
+      tenEl.classList.add("past")
+      elevenEl.classList.add("past")
+      twelveEl.classList.add("past")
+      thirteenEl.classList.add("past")
+      fourteenEl.classList.add("present")
+      fifteenEl.classList.add("future")
+      sixteenEl.classList.add("future")
+      seventeenEl.classList.add("future")
+      return
+    }
+    else if (currentHour == 15)
+    {
+      nineEl.classList.add("past")
+      tenEl.classList.add("past")
+      elevenEl.classList.add("past")
+      twelveEl.classList.add("past")
+      thirteenEl.classList.add("past")
+      fourteenEl.classList.add("past")
+      fifteenEl.classList.add("present")
+      sixteenEl.classList.add("future")
+      seventeenEl.classList.add("future")
+      return
+    }
+    else if (currentHour == 16)
+    {
+      nineEl.classList.add("past")
+      tenEl.classList.add("past")
+      elevenEl.classList.add("past")
+      twelveEl.classList.add("past")
+      thirteenEl.classList.add("past")
+      fourteenEl.classList.add("past")
+      fifteenEl.classList.add("past")
+      sixteenEl.classList.add("present")
+      seventeenEl.classList.add("future")
+      return
+    }
+    else if (currentHour == 17)
+    {
+      nineEl.classList.add("past")
+      tenEl.classList.add("past")
+      elevenEl.classList.add("past")
+      twelveEl.classList.add("past")
+      thirteenEl.classList.add("past")
+      fourteenEl.classList.add("past")
+      fifteenEl.classList.add("past")
+      sixteenEl.classList.add("past")
+      seventeenEl.classList.add("present")
+      return
+    }
+    else
+    {
+      nineEl.classList.add("past")
+      tenEl.classList.add("past")
+      elevenEl.classList.add("past")
+      twelveEl.classList.add("past")
+      thirteenEl.classList.add("past")
+      fourteenEl.classList.add("past")
+      fifteenEl.classList.add("past")
+      sixteenEl.classList.add("past")
+      seventeenEl.classList.add("past")
+      return
+    }
   }
-   else if (currentHour == 10)
-  {
-    nineEl.classList.add("past")
-    tenEl.classList.add("present")
-    elevenEl.classList.add("future")
-    twelveEl.classList.add("future")
-    thirteenEl.classList.add("future")
-    fourteenEl.classList.add("future")
-    fifteenEl.classList.add("future")
-    sixteenEl.classList.add("future")
-    seventeenEl.classList.add("future")
-    return
-  }
-  else if (currentHour == 11)
-  {
-    nineEl.classList.add("past")
-    tenEl.classList.add("past")
-    elevenEl.classList.add("present")
-    twelveEl.classList.add("future")
-    thirteenEl.classList.add("future")
-    fourteenEl.classList.add("future")
-    fifteenEl.classList.add("future")
-    sixteenEl.classList.add("future")
-    seventeenEl.classList.add("future")
-    return
-  }
-  else if (currentHour == 12)
-  {
-    nineEl.classList.add("past")
-    tenEl.classList.add("past")
-    elevenEl.classList.add("past")
-    twelveEl.classList.add("present")
-    thirteenEl.classList.add("future")
-    fourteenEl.classList.add("future")
-    fifteenEl.classList.add("future")
-    sixteenEl.classList.add("future")
-    seventeenEl.classList.add("future")
-    return
-  }
-  else if (currentHour == 13)
-  {
-    nineEl.classList.add("past")
-    tenEl.classList.add("past")
-    elevenEl.classList.add("past")
-    twelveEl.classList.add("past")
-    thirteenEl.classList.add("present")
-    fourteenEl.classList.add("future")
-    fifteenEl.classList.add("future")
-    sixteenEl.classList.add("future")
-    seventeenEl.classList.add("future")
-    return
-  }
-  else if (currentHour == 14)
-  {
-    nineEl.classList.add("past")
-    tenEl.classList.add("past")
-    elevenEl.classList.add("past")
-    twelveEl.classList.add("past")
-    thirteenEl.classList.add("past")
-    fourteenEl.classList.add("present")
-    fifteenEl.classList.add("future")
-    sixteenEl.classList.add("future")
-    seventeenEl.classList.add("future")
-    return
-  }
-  else if (currentHour == 15)
-  {
-    nineEl.classList.add("past")
-    tenEl.classList.add("past")
-    elevenEl.classList.add("past")
-    twelveEl.classList.add("past")
-    thirteenEl.classList.add("past")
-    fourteenEl.classList.add("past")
-    fifteenEl.classList.add("present")
-    sixteenEl.classList.add("future")
-    seventeenEl.classList.add("future")
-    return
-  }
-  else if (currentHour == 16)
-  {
-    nineEl.classList.add("past")
-    tenEl.classList.add("past")
-    elevenEl.classList.add("past")
-    twelveEl.classList.add("past")
-    thirteenEl.classList.add("past")
-    fourteenEl.classList.add("past")
-    fifteenEl.classList.add("past")
-    sixteenEl.classList.add("present")
-    seventeenEl.classList.add("future")
-    return
-  }
-  else if (currentHour == 17)
-  {
-    nineEl.classList.add("past")
-    tenEl.classList.add("past")
-    elevenEl.classList.add("past")
-    twelveEl.classList.add("past")
-    thirteenEl.classList.add("past")
-    fourteenEl.classList.add("past")
-    fifteenEl.classList.add("past")
-    sixteenEl.classList.add("past")
-    seventeenEl.classList.add("present")
-    return
-  }
-  else
-  {
-    nineEl.classList.add("past")
-    tenEl.classList.add("past")
-    elevenEl.classList.add("past")
-    twelveEl.classList.add("past")
-    thirteenEl.classList.add("past")
-    fourteenEl.classList.add("past")
-    fifteenEl.classList.add("past")
-    sixteenEl.classList.add("past")
-    seventeenEl.classList.add("past")
-    return
-  }
-}
 
 
 
@@ -255,6 +255,7 @@ function renderToDos9Am(){
       toDoList9AmEl.appendChild(li);
   }
 }
+
 
 // Store to dos
 function storeToDos9Am() {
