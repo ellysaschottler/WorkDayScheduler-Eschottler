@@ -21,17 +21,178 @@
   //
 //});
 
+var nineEl = document.querySelector("[data-hour='9']")
+var tenEl = document.querySelector("[data-hour='10']")
+var elevenEl = document.querySelector("[data-hour='11']")
+var twelveEl = document.querySelector("[data-hour='12']")
+var thirteenEl = document.querySelector("[data-hour='13']")
+var fourteenEl = document.querySelector("[data-hour='14']")
+var fifteenEl = document.querySelector("[data-hour='15']")
+var sixteenEl = document.querySelector("[data-hour='16']")
+var seventeenEl = document.querySelector("[data-hour='17']")
 
 
+//Update Current Day to page
+var currentDay = dayjs();
+$("#currentDay").text(currentDay.format("[Today is ]MM/DD/YYYY"))
 
-//var currentDay = dayjs();
-//$("#currentDay").text(currentDay.format("[Today is ]MM/DD/YYYY"))
+//Get CurrentHour with dayjs
+var currentHour = dayjs().format("H")
+
+
+function classifyPastPresentFuture (){
+  if (currentHour < 9)
+  {
+    nineEl.setAttribute("class", "future")
+    tenEl.setAttribute("class", "future")
+    elevenEl.setAttribute("class", "future")
+    twelveEl.setAttribute("class", "future")
+    thirteenEl.setAttribute("class", "future")
+    fourteenEl.setAttribute("class", "future")
+    fifteenEl.setAttribute("class", "future")
+    sixteenEl.setAttribute("class", "future")
+    seventeenEl.setAttribute("class", "future")
+    return
+  } 
+    else if (9 == currentHour)
+  {
+  nineEl.setAttribute("class", "present")
+  tenEl.setAttribute("class", "future")
+  elevenEl.setAttribute("class", "future")
+  twelveEl.setAttribute("class", "future")
+  thirteenEl.setAttribute("class", "future")
+  fourteenEl.setAttribute("class", "future")
+  fifteenEl.setAttribute("class", "future")
+  sixteenEl.setAttribute("class", "future")
+  seventeenEl.setAttribute("class", "future")
+  return
+  }
+   else if (currentHour == 10)
+  {
+    nineEl.setAttribute("class", "past")
+    tenEl.setAttribute("class", "present")
+    elevenEl.setAttribute("class", "future")
+    twelveEl.setAttribute("class", "future")
+    thirteenEl.setAttribute("class", "future")
+    fourteenEl.setAttribute("class", "future")
+    fifteenEl.setAttribute("class", "future")
+    sixteenEl.setAttribute("class", "future")
+    seventeenEl.setAttribute("class", "future")
+    return
+  }
+  else if (currentHour == 11)
+  {
+    nineEl.setAttribute("class", "past")
+    tenEl.setAttribute("class", "past")
+    elevenEl.setAttribute("class", "present")
+    twelveEl.setAttribute("class", "future")
+    thirteenEl.setAttribute("class", "future")
+    fourteenEl.setAttribute("class", "future")
+    fifteenEl.setAttribute("class", "future")
+    sixteenEl.setAttribute("class", "future")
+    seventeenEl.setAttribute("class", "future")
+    return
+  }
+  else if (currentHour == 12)
+  {
+    nineEl.setAttribute("class", "past")
+    tenEl.setAttribute("class", "past")
+    elevenEl.setAttribute("class", "past")
+    twelveEl.setAttribute("class", "present")
+    thirteenEl.setAttribute("class", "future")
+    fourteenEl.setAttribute("class", "future")
+    fifteenEl.setAttribute("class", "future")
+    sixteenEl.setAttribute("class", "future")
+    seventeenEl.setAttribute("class", "future")
+    return
+  }
+  else if (currentHour == 13)
+  {
+    nineEl.setAttribute("class", "past")
+    tenEl.setAttribute("class", "past")
+    elevenEl.setAttribute("class", "past")
+    twelveEl.setAttribute("class", "past")
+    thirteenEl.setAttribute("class", "present")
+    fourteenEl.setAttribute("class", "future")
+    fifteenEl.setAttribute("class", "future")
+    sixteenEl.setAttribute("class", "future")
+    seventeenEl.setAttribute("class", "future")
+    return
+  }
+  else if (currentHour == 14)
+  {
+    nineEl.setAttribute("class", "past")
+    tenEl.setAttribute("class", "past")
+    elevenEl.setAttribute("class", "past")
+    twelveEl.setAttribute("class", "past")
+    thirteenEl.setAttribute("class", "past")
+    fourteenEl.setAttribute("class", "present")
+    fifteenEl.setAttribute("class", "future")
+    sixteenEl.setAttribute("class", "future")
+    seventeenEl.setAttribute("class", "future")
+    return
+  }
+  else if (currentHour == 15)
+  {
+    nineEl.setAttribute("class", "past")
+    tenEl.setAttribute("class", "past")
+    elevenEl.setAttribute("class", "past")
+    twelveEl.setAttribute("class", "past")
+    thirteenEl.setAttribute("class", "past")
+    fourteenEl.setAttribute("class", "past")
+    fifteenEl.setAttribute("class", "present")
+    sixteenEl.setAttribute("class", "future")
+    seventeenEl.setAttribute("class", "future")
+    return
+  }
+  else if (currentHour == 16)
+  {
+    nineEl.setAttribute("class", "past")
+    tenEl.setAttribute("class", "past")
+    elevenEl.setAttribute("class", "past")
+    twelveEl.setAttribute("class", "past")
+    thirteenEl.setAttribute("class", "past")
+    fourteenEl.setAttribute("class", "past")
+    fifteenEl.setAttribute("class", "past")
+    sixteenEl.setAttribute("class", "present")
+    seventeenEl.setAttribute("class", "future")
+    return
+  }
+  else if (currentHour == 17)
+  {
+    nineEl.setAttribute("class", "past")
+    tenEl.setAttribute("class", "past")
+    elevenEl.setAttribute("class", "past")
+    twelveEl.setAttribute("class", "past")
+    thirteenEl.setAttribute("class", "past")
+    fourteenEl.setAttribute("class", "past")
+    fifteenEl.setAttribute("class", "past")
+    sixteenEl.setAttribute("class", "past")
+    seventeenEl.setAttribute("class", "present")
+    return
+  }
+  else
+  {
+    nineEl.setAttribute("class", "past")
+    tenEl.setAttribute("class", "past")
+    elevenEl.setAttribute("class", "past")
+    twelveEl.setAttribute("class", "past")
+    thirteenEl.setAttribute("class", "past")
+    fourteenEl.setAttribute("class", "past")
+    fifteenEl.setAttribute("class", "past")
+    sixteenEl.setAttribute("class", "past")
+    seventeenEl.setAttribute("class", "past")
+    return
+  }
+}
+
+
 
 //9 AM variables and functions
 var toDoForm9AmEl = document.querySelector("#toDo-form9Am");
 var toDoList9AmEl = document.querySelector("#toDo-list9Am");
 var toDos9Am = [];
-var save9AmButton = document.querySelector("[data-hour='nineAm']");
+var save9AmButton = document.querySelector("[data-timeblock='nineAm']");
 var toDoInput9Am = document.querySelector("#toDo9Am")
 
 // Get stored todos if available
@@ -117,7 +278,7 @@ save9AmButton.addEventListener("click", function(e){
 var toDoForm10AmEl = document.querySelector("#toDo-form10Am");
 var toDoList10AmEl = document.querySelector("#toDo-list10Am");
 var toDos10Am = [];
-var save10AmButton = document.querySelector("[data-hour='tenAm']");
+var save10AmButton = document.querySelector("[data-timeblock='tenAm']");
 var toDoInput10Am = document.querySelector("#toDo10Am")
 
 //Renders any saved plans for the hour if they are stored
@@ -154,7 +315,7 @@ save10AmButton.addEventListener("click", function(e){
 var toDoForm11AmEl = document.querySelector("#toDo-form11Am");
 var toDoList11AmEl = document.querySelector("#toDo-list11Am");
 var toDos11Am = [];
-var save11AmButton = document.querySelector("[data-hour='elevenAm']");
+var save11AmButton = document.querySelector("[data-timeblock='elevenAm']");
 var toDoInput11Am = document.querySelector("#toDo11Am")
 
 //Renders any saved plans for the hour if they are stored
@@ -190,7 +351,7 @@ save11AmButton.addEventListener("click", function(e){
 var toDoForm12PmEl = document.querySelector("#toDo-form12Pm");
 var toDoList12PmEl = document.querySelector("#toDo-list12Pm");
 var toDos12Pm = [];
-var save12PmButton = document.querySelector("[data-hour='twelvePm']");
+var save12PmButton = document.querySelector("[data-timeblock='twelvePm']");
 var toDoInput12Pm = document.querySelector("#toDo12Pm")
 
 //Renders any saved plans for the hour if they are stored
@@ -227,7 +388,7 @@ save12PmButton.addEventListener("click", function(e){
 var toDoForm1PmEl = document.querySelector("#toDo-form1Pm");
 var toDoList1PmEl = document.querySelector("#toDo-list1Pm");
 var toDos1Pm = [];
-var save1PmButton = document.querySelector("[data-hour='onePm']");
+var save1PmButton = document.querySelector("[data-timeblock='onePm']");
 var toDoInput1Pm = document.querySelector("#toDo1Pm")
 
 //Renders any saved plans for the hour if they are stored
@@ -264,7 +425,7 @@ save1PmButton.addEventListener("click", function(e){
 var toDoForm2PmEl = document.querySelector("#toDo-form2Pm");
 var toDoList2PmEl = document.querySelector("#toDo-list2Pm");
 var toDos2Pm = [];
-var save2PmButton = document.querySelector("[data-hour='twoPm']");
+var save2PmButton = document.querySelector("[data-timeblock='twoPm']");
 var toDoInput2Pm = document.querySelector("#toDo2Pm")
 
 //Renders any saved plans for the hour if they are stored
@@ -300,7 +461,7 @@ save2PmButton.addEventListener("click", function(e){
 var toDoForm3PmEl = document.querySelector("#toDo-form3Pm");
 var toDoList3PmEl = document.querySelector("#toDo-list3Pm");
 var toDos3Pm = [];
-var save3PmButton = document.querySelector("[data-hour='threePm']");
+var save3PmButton = document.querySelector("[data-timeblock='threePm']");
 var toDoInput3Pm = document.querySelector("#toDo3Pm")
 
 //Renders any saved plans for the hour if they are stored
@@ -337,7 +498,7 @@ save3PmButton.addEventListener("click", function(e){
 var toDoForm4PmEl = document.querySelector("#toDo-form4Pm");
 var toDoList4PmEl = document.querySelector("#toDo-list4Pm");
 var toDos4Pm = [];
-var save4PmButton = document.querySelector("[data-hour='fourPm']");
+var save4PmButton = document.querySelector("[data-timeblock='fourPm']");
 var toDoInput4Pm = document.querySelector("#toDo4Pm")
 
 //Renders any saved plans for the hour if they are stored
@@ -374,7 +535,7 @@ save4PmButton.addEventListener("click", function(e){
 var toDoForm5PmEl = document.querySelector("#toDo-form5Pm");
 var toDoList5PmEl = document.querySelector("#toDo-list5Pm");
 var toDos5Pm = [];
-var save5PmButton = document.querySelector("[data-hour='fivePm']");
+var save5PmButton = document.querySelector("[data-timeblock='fivePm']");
 var toDoInput5Pm = document.querySelector("#toDo5Pm")
 
 //Renders any saved plans for the hour if they are stored
@@ -407,3 +568,4 @@ save5PmButton.addEventListener("click", function(e){
 })
 
 init()
+classifyPastPresentFuture ()
