@@ -12,10 +12,10 @@ N/A
 
 ## Usage
 
-View my Code Quiz website at: https://ellysaschottler.github.io/WorkDayScheduler-Eschottler
+View my Code Quiz website at: https://ellysaschottler.github.io/WorkDayScheduler-Eschottler/Develop/index.html
 
 
-Screenshot of my work: ![Screenshot](/assets/WorkDayScheduler.png)
+Screenshot of my work: ![Screenshot](WorkDayScheduler-Eschottler/assets/WorkDayScheduler.png)
 
 ## Credits
 
