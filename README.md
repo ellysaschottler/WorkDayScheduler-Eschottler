@@ -15,7 +15,7 @@ N/A
 View my Code Quiz website at: https://ellysaschottler.github.io/WorkDayScheduler-Eschottler/Develop/index.html
 
 
-Screenshot of my work: ![Screenshot](../assets/WorkDayScheduler.png)
+Screenshot of my work: ![Screenshot](./Assets/WorkDayScheduler.png)
 
 ## Credits
 
